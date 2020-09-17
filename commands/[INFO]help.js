@@ -50,82 +50,104 @@ module.exports = {
       .setURL("https://tflashgamer.github.io/onicommands.html")
       .setColor(success)
       .setImage("https://i.ibb.co/H2GZ65x/panorama.png")
-      .addField(`❯ ${prefix}smug`, `Самодовольно улыбнуться`);
+      .addField(`❯ ${prefix}smug`, `Самодовольно улыбнуться`, true);
 
     let artsembed = new Discord.MessageEmbed()
       .setTitle("◤🖼◢   ⌑≫⋉Арты и пикчи⋊≪⌑")
       .setURL("https://tflashgamer.github.io/onicommands.html")
       .setColor(success)
       .setImage("https://i.ibb.co/H2GZ65x/panorama.png")
-      .addField(`❯ ${prefix}nekogif`, `Гифка с неко.`)
-      .addField(`❯ ${prefix}neko`, `Арт с неко.`)
-      .addField(`❯ ${prefix}kemonomimi`, `Арт с кемономими.`)
-      .addField(`❯ ${prefix}meow`, `Пикча с котиками :3.`)
-      .addField(`❯ ${prefix}foxgirl`, `Арт с инумими.`);
+      .addField(`❯ ${prefix}nekogif`, `Гифка с неко.`, true)
+      .addField(`❯ ${prefix}neko`, `Арт с неко.`, true)
+      .addField(`❯ ${prefix}kemonomimi`, `Арт с кемономими.`, true)
+      .addField(`❯ ${prefix}meow`, `Пикча с котиками :3.`, true)
+      .addField(`❯ ${prefix}foxgirl`, `Арт с инумими.`, true);
 
     let funembed = new Discord.MessageEmbed()
       .setTitle("◤🎈◢   ⌑≫⋉Развлечения⋊≪⌑")
       .setURL("https://tflashgamer.github.io/onicommands.html")
       .setColor(success)
       .setImage("https://i.ibb.co/H2GZ65x/panorama.png")
-      .addField(`❯ ${prefix}iq`, `Игра, у кого больше IQ.`);
+      .addField(`❯ ${prefix}iq`, `Игра, у кого больше IQ.`, true);
 
     let infoembed = new Discord.MessageEmbed()
       .setTitle("◤ℹ◢   ⌑≫⋉Информация⋊≪⌑")
       .setURL("https://tflashgamer.github.io/onicommands.html")
       .setColor(success)
       .setImage("https://i.ibb.co/H2GZ65x/panorama.png")
-      .addField(`❯ ${prefix}stats`, `Статистика бота.`)
-      .addField(`❯ ${prefix}ping`, `Пинг вашего сервера и бота.`)
-      .addField(`❯ ${prefix}help`, `Справка о командах бота.`)
-      .addField(`❯ ${prefix}invite`, `Инвайт ссылка для добавления бота.`);
+      .addField(`❯ ${prefix}stats`, `Статистика бота.`, true)
+      .addField(`❯ ${prefix}ping`, `Пинг вашего сервера и бота.`, true)
+      .addField(`❯ ${prefix}help`, `Справка о командах бота.`, true)
+      .addField(
+        `❯ ${prefix}invite`,
+        `Инвайт ссылка для добавления бота.`,
+        true
+      );
 
     let moderembed = new Discord.MessageEmbed()
       .setTitle("◤🛡◢   ⌑≫⋉Модерация⋊≪⌑")
       .setURL("https://tflashgamer.github.io/onicommands.html")
       .setColor(success)
       .setImage("https://i.ibb.co/H2GZ65x/panorama.png")
-      .addField(`❯ ${prefix}addemote`, `Добавление любого эмодзи на севрер.`)
-      .addField(`❯ ${prefix}ban`, `Команда для бана нарушителей.`)
-      .addField(`❯ ${prefix}prune`, `Очистка чата.`)
-      .addField(`❯ ${prefix}unban`, `Команда для разбана пользователя.`);
+      .addField(
+        `❯ ${prefix}addemote`,
+        `Добавление любого эмодзи на севрер.`,
+        true
+      )
+      .addField(`❯ ${prefix}ban`, `Команда для бана нарушителей.`, true)
+      .addField(`❯ ${prefix}prune`, `Очистка чата.`, true)
+      .addField(`❯ ${prefix}unban`, `Команда для разбана пользователя.`, true);
 
     let musicembed = new Discord.MessageEmbed()
       .setTitle("◤🎶◢   ⌑≫⋉Музыка⋊≪⌑")
       .setURL("https://tflashgamer.github.io/onicommands.html")
       .setColor(success)
       .setImage("https://i.ibb.co/H2GZ65x/panorama.png")
-      .addField(`❯ ${prefix}loop`, `Включает режим повтора для музыки.`)
-      .addField(`❯ ${prefix}lyrics`, `Позволяет достать слова песни.`)
-      .addField(`❯ ${prefix}np`, `Статистика об треке.`)
-      .addField(`❯ ${prefix}play`, `Воспроизвести музыку.`)
+      .addField(`❯ ${prefix}loop`, `Включает режим повтора для музыки.`, true)
+      .addField(`❯ ${prefix}lyrics`, `Позволяет достать слова песни.`, true)
+      .addField(`❯ ${prefix}np`, `Статистика об треке.`, true)
+      .addField(`❯ ${prefix}play`, `Воспроизвести музыку.`, true)
       .addField(
         `❯ ${prefix}pruning`,
-        `Включить режим очистки сообщений за собой.`
+        `Включить режим очистки сообщений за собой.`,
+        true
       )
-      .addField(`❯ ${prefix}queue`, `Список треков ожидающих воспроизведения.`)
-      .addField(`❯ ${prefix}remove`, `Убрать трек из списка воспроизведения.`)
-      .addField(`❯ ${prefix}resume`, `Снять паузу с плеера.`)
-      .addField(`❯ ${prefix}search`, `Поиск треков по названию.`)
-      .addField(`❯ ${prefix}shuffle`, `Перемешать треки в списке ожидания.`)
+      .addField(
+        `❯ ${prefix}queue`,
+        `Список треков ожидающих воспроизведения.`,
+        true
+      )
+      .addField(
+        `❯ ${prefix}remove`,
+        `Убрать трек из списка воспроизведения.`,
+        true
+      )
+      .addField(`❯ ${prefix}resume`, `Снять паузу с плеера.`, true)
+      .addField(`❯ ${prefix}search`, `Поиск треков по названию.`, true)
+      .addField(
+        `❯ ${prefix}shuffle`,
+        `Перемешать треки в списке ожидания.`,
+        true
+      )
       .addField(
         `❯ ${prefix}skipto`,
-        `Скипнуть треки к определённому месту в списке.`
+        `Скипнуть треки к определённому месту в списке.`,
+        true
       )
-      .addField(`❯ ${prefix}stop`, `Остановить плеер.`)
-      .addField(`❯ ${prefix}volume`, `Изменить громкость плеера.`)
-      .addField(`❯ ${prefix}playlist`, `Запустить плейлист с ютюба.`)
-      .addField(`❯ ${prefix}skip`, `Пропустить трек.`)
-      .addField(`❯ ${prefix}pause`, `Поставить музыку на паузу.`);
+      .addField(`❯ ${prefix}stop`, `Остановить плеер.`, true)
+      .addField(`❯ ${prefix}volume`, `Изменить громкость плеера.`, true)
+      .addField(`❯ ${prefix}playlist`, `Запустить плейлист с ютюба.`, true)
+      .addField(`❯ ${prefix}skip`, `Пропустить трек.`, true)
+      .addField(`❯ ${prefix}pause`, `Поставить музыку на паузу.`, true);
 
     let ownerembed = new Discord.MessageEmbed()
       .setTitle("◤🍂◢   ⌑≫⋉Для владельца⋊≪⌑")
       .setURL("https://tflashgamer.github.io/onicommands.html")
       .setColor(success)
       .setImage("https://i.ibb.co/H2GZ65x/panorama.png")
-      .addField(`❯ ${prefix}reboot`, `Перезапустить бота.`)
-      .addField(`❯ ${prefix}setname`, `Установить ник боту.`)
-      .addField(`❯ ${prefix}shutdown`, `Отключить бота.`);
+      .addField(`❯ ${prefix}reboot`, `Перезапустить бота.`, true)
+      .addField(`❯ ${prefix}setname`, `Установить ник боту.`, true)
+      .addField(`❯ ${prefix}shutdown`, `Отключить бота.`, true);
 
     let utilsembed = new Discord.MessageEmbed()
       .setTitle("◤🛠◢   ⌑≫⋉Утилиты⋊≪⌑")
@@ -137,12 +159,16 @@ module.exports = {
         `❯ ${prefix}avatar`,
         `Достать аватарку пользователя в полном размере.`
       )
-      .addField(`❯ ${prefix}profile`, `Достать профиль пользователя.`)
-      .addField(`❯ ${prefix}say`, `Сказать от имени бота.`)
-      .addField(`❯ ${prefix}serverinfo`, `Достать информацию о сервере.`)
-      .addField(`❯ ${prefix}userinfo`, `Достать информацию о пользователе.`)
-      .addField(`❯ ${prefix}vote`, `Запустить голосование.`)
-      .addField(`❯ ${prefix}embed`, `Отослать сообщение через эмбед.`);
+      .addField(`❯ ${prefix}profile`, `Достать профиль пользователя.`, true)
+      .addField(`❯ ${prefix}say`, `Сказать от имени бота.`, true)
+      .addField(`❯ ${prefix}serverinfo`, `Достать информацию о сервере.`, true)
+      .addField(
+        `❯ ${prefix}userinfo`,
+        `Достать информацию о пользователе.`,
+        true
+      )
+      .addField(`❯ ${prefix}vote`, `Запустить голосование.`, true)
+      .addField(`❯ ${prefix}embed`, `Отослать сообщение через эмбед.`, true);
     let mainhelpmessage = await message.channel.send(embed);
     await mainhelpmessage.react("🎭");
     await mainhelpmessage.react("🖼");
