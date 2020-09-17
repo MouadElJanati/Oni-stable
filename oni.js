@@ -96,7 +96,10 @@ client.once("ready", () => {
 
 // Бот готов
 client.on("ready", () => {
-  client.user.setPresence({ activity: { name: "🍂" }, status: "dnd" });
+  client.user.setPresence({
+    activity: { name: `${prefix}help | 🍂` },
+    status: "dnd",
+  });
 });
 
 /**
