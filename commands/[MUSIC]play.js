@@ -166,9 +166,8 @@ module.exports = {
       serverQueue.songs.push(song);
       //* Ембед добавления видео в список
       let songadded = new Discord.MessageEmbed()
-        .setTitle(
-          `${message.author.username} добавил трек [**${song.title}**](${song.url})`
-        )
+        .setTitle(`${message.author.username} добавил трек **${song.title}**`)
+        .setURL(`${song.url}`)
         .setColor(success)
         .setThumbnail(
           "https://static.dribbble.com/users/1284740/screenshots/4053432/add_button_now.gif"
