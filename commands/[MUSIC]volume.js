@@ -7,6 +7,9 @@ module.exports = {
   aliases: ["v"],
   description: "Изменяет громкость воспроизводимого трека",
   execute(client, message, args) {
+    const checkemote = message.client.emojis.cache.get("755736806087196764");
+    message.react(checkemote);
+    message.delete({ timeout: 3000 });
     let joinfirstembed = new Discord.MessageEmbed()
       .setTitle("**Для начала присоеденитесь к голосовому каналу**")
       .setColor(fail)

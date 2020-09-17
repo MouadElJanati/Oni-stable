@@ -7,6 +7,8 @@ module.exports = {
   aliases: ["s"],
   description: "Скипает текущий трек",
   execute(client, message, args) {
+    message.react("⏭");
+    message.delete({ timeout: 3000 });
     let skipembed = new Discord.MessageEmbed()
       .setTitle(`${message.author.username} ⏭ скипнул песню`)
       .setColor(success)

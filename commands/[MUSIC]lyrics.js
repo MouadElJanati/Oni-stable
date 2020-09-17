@@ -7,6 +7,9 @@ module.exports = {
   aliases: ["ly"],
   description: "Достаёт лирику песни",
   async execute(client, message, args) {
+    const checkemote = message.client.emojis.cache.get("755736806087196764");
+    message.react(checkemote);
+    message.delete({ timeout: 3000 });
     let nothingPlaying = new Discord.MessageEmbed()
       .setTitle("Сейчас ничего не играет.")
       .setThumbnail(

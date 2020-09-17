@@ -8,6 +8,9 @@ module.exports = {
   aliases: ["st"],
   description: "Скипает трек к номеру в списке",
   execute(client, message, args) {
+    const checkemote = message.client.emojis.cache.get("755736806087196764");
+    message.react(checkemote);
+    message.delete({ timeout: 3000 });
     let usage = new Discord.MessageEmbed()
       .setTitle(
         `Использование: ${config.prefix}${module.exports.name} <номер в списке>`

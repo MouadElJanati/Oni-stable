@@ -6,6 +6,9 @@ module.exports = {
   name: "stop",
   description: "Останавливает музыку",
   execute(client, message, args) {
+    const checkemote = message.client.emojis.cache.get("755736806087196764");
+    message.react(checkemote);
+    message.delete({ timeout: 3000 });
     let emptyqueue = new Discord.MessageEmbed()
       .setTitle(`Ничего не играет.`)
       .setColor(fail)

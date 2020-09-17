@@ -7,6 +7,9 @@ module.exports = {
   name: "pruning",
   description: "Включает очистку музыкальных команд",
   execute(client, message, args) {
+    const checkemote = message.client.emojis.cache.get("755736806087196764");
+    message.react(checkemote);
+    message.delete({ timeout: 3000 });
     config.PRUNING = !config.PRUNING;
 
     fs.writeFile("./config.json", JSON.stringify(config, null, 2), (err) => {

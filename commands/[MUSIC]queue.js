@@ -7,6 +7,9 @@ module.exports = {
   aliases: ["q"],
   description: "Показывает список песен.",
   execute(client, message, args) {
+    const checkemote = message.client.emojis.cache.get("755736806087196764");
+    message.react(checkemote);
+    message.delete({ timeout: 3000 });
     const queue = message.client.queue.get(message.guild.id);
     let queueEmpty = new Discord.MessageEmbed()
       .setTitle("Здесь пустовато :/")

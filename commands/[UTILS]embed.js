@@ -10,5 +10,6 @@ module.exports = {
       .setDescription(args.join(" "))
       .setColor(success);
     message.channel.send(embed);
+    message.delete();
   },
 };

@@ -6,6 +6,8 @@ module.exports = {
   name: "shuffle",
   description: "Перемешивает список",
   execute(client, message, args) {
+    message.react("🔀");
+    message.delete({ timeout: 3000 });
     let shuffleembed = new Discord.MessageEmbed()
       .setTitle(`${message.author.username} 🔀 перемешал список`)
       .setColor(success)

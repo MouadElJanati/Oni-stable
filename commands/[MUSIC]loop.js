@@ -7,6 +7,8 @@ module.exports = {
   aliases: ["l"],
   description: "Включает повтор для плеера",
   execute(client, message, args) {
+    message.react("🔄");
+    message.delete({ timeout: 3000 });
     let nothingPlaying = new Discord.MessageEmbed()
       .setTitle("Сейчас ничего не играет.")
       .setThumbnail(

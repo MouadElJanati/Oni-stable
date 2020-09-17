@@ -8,6 +8,8 @@ module.exports = {
   name: "search",
   description: "Ищет треки по названию что б их проиграть",
   async execute(client, message, args) {
+    message.react("🔎");
+    message.delete({ timeout: 3000 });
     //* Ембед для оповещение о потребности присоединения
     let joinfirsttembed = new Discord.MessageEmbed()
       .setTitle("**Для начала присоеденитесь к голосовому каналу**")

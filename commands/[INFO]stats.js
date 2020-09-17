@@ -9,6 +9,8 @@ module.exports = {
   name: "stats",
   description: "Краткая информация об боте",
   execute(client, message, args) {
+    message.react("744234265910312961");
+    message.delete({ timeout: 3000 });
     const serverName = message.guild.name;
     const ping = client.ws.ping;
     const botAv = client.displayAvatarURL;
@@ -53,6 +55,5 @@ module.exports = {
         true
       );
     message.channel.send(embed);
-    message.delete();
   },
 };

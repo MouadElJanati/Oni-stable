@@ -6,6 +6,9 @@ module.exports = {
   name: "np",
   description: "Показывает, что сейчас играет",
   execute(client, message, args) {
+    const checkemote = message.client.emojis.cache.get("755736806087196764");
+    message.react(checkemote);
+    message.delete({ timeout: 3000 });
     const playemote = message.client.emojis.cache.get("755726642659459143");
     let nothingPlaying = new Discord.MessageEmbed()
       .setTitle("Сейчас ничего не играет.")
