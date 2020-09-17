@@ -1,15 +1,15 @@
-const { success, fail } = require("../assets/colors.json");
 const Discord = require("discord.js");
-const { prefix, token, version } = require("../assets/config.json");
+const { success, fail } = require("../assets/colors.json");
 let phrases = require("../assets/phrases/phrases.json");
 
-module.exports.run = {
+module.exports = {
   name: "ping",
   description: "Позволяет быстро узнать задержку от бота к Вам.",
   execute(client, message, args) {
+    console.log("+");
     const oni = client.emojis.cache.get("744234265910312961");
     const server = client.emojis.cache.get("746021632320995468");
-    const embed = new Discord.MessageEmbed()
+    let embed = new Discord.MessageEmbed()
 
       .setTitle(
         `${phrases.ping[Math.floor(Math.random() * phrases.ping.length)]}`
