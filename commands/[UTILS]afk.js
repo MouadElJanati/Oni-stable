@@ -5,8 +5,16 @@ const config = require("../assets/config.json");
 module.exports = {
   name: "afk",
   description: "Дайте знать другим что Вы отошли.",
-  execute(client, message, args) {
+  async execute(client, message, args) {
     message.react("💤");
+    let afks = require("../assets/phrases/afk.json");
+    let notinafk = new Discord.MessageEmbed()
+      .setColor(success)
+      .setTitle("AFK💤")
+      .setDescription(`${message.author}, с возвращением!`)
+      .setThumbnail(
+        `${afks.image[Math.floor(Math.random() * afks.image.length)]}`
+      );
     let reason = args.join(" ")
       ? args.join(" ")
       : "Кажется пользователю просто нужно было отойти (причина не указана).";
@@ -14,9 +22,12 @@ module.exports = {
     let afkcheck = client.afk.get(message.author.id);
     if (afkcheck)
       return [
-        client.afk.delete(message.author.id),
-        message
-          .reply(`Теперь Вы не находитесь в афк списке!`)
+        await message.guild.roles.cache
+          .find((role) => role.name === "AFK💤")
+          .delete(),
+        await client.afk.delete(message.author.id),
+        await message
+          .reply(notinafk)
           .then((msg) => msg.delete({ timeout: 5000 })),
       ];
     if (!afklist) {
@@ -29,7 +40,7 @@ module.exports = {
       );
       const member = message.author;
       console.log(hrole.name);
-      message.guild.roles
+      await message.guild.roles
         .create({
           data: {
             name: "AFK💤",
@@ -40,11 +51,11 @@ module.exports = {
           reason: "Роль созданна для контроллирования ботом афк списка",
         })
         .catch(console.error);
-      const role = message.guild.roles.cache.find(
+      const afkroles = await message.guild.roles.cache.find(
         (role) => role.name === "AFK💤"
       );
-      member.roles.add(role);
-      let afks = require("../assets/phrases/afk.json");
+      await message.member.roles.add(afkroles);
+
       let embed = new Discord.MessageEmbed()
         .setColor(success)
         .setTitle("AFK💤")
