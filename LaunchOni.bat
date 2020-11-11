@@ -37,8 +37,7 @@ IF %M% == 4 GOTO EOF
 GOTO ERROR
 :LAUNCH
 cls
-node .
-GOTO MENU
+node . && GOTO MENU
 :INSTALL
 cls
 ECHO Устанавливаем нужные библиотеки...  
@@ -48,7 +47,7 @@ npm start
 cls
 ECHO Пытаемся обновить/восстановить Oni...
 ECHO [i] Если здесь Вы получаете ошибку, убедитесь, что у Вас установлена стабильная версия git
-
+git clone https://github.com/TFlashgamer/Oni-stable .
 GOTO MENU
 :ERROR
 cls
@@ -56,3 +55,9 @@ ECHO                                            ▀▀▀▀▀▀▀▀▀▀▀▀!!!▀▀▀▀▀▀▀▀▀▀▀▀▀
 ECHO                                            Вы ввели недопустимое число!
 ECHO                                            ▄▄▄▄▄▄▄▄▄▄▄▄!!!▄▄▄▄▄▄▄▄▄▄▄▄▄
 GOTO MENU
+:EOF
+cls
+ECHO Закрываем Oni...
+ECHO Успешно завершено
+TIMEOUT /T 5
+exit
