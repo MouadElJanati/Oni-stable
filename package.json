@@ -4,7 +4,7 @@
   "description": "multifunctional bot",
   "main": "oni.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npm i && call LaunchOni.bat"
   },
   "author": "TSlash",
   "license": "ISC",
@@ -14,6 +14,7 @@
     "@keyv/postgres": "^1.0.16",
     "@keyv/redis": "^2.1.2",
     "@keyv/sqlite": "^2.0.2",
+    "canvacord": "^4.0.1",
     "canvas": "^2.6.1",
     "canvas-constructor": "^4.1.0",
     "chalk": "^4.1.0",
@@ -34,7 +35,19 @@
     "sqlite3": "^5.0.0",
     "strftime": "^0.10.0",
     "string-progressbar": "^1.0.1",
-    "ytdl-core": "^3.1.0",
+    "ytdl-core": "^4.0.3",
     "ytdl-core-discord": "^1.2.1"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TFlashgamer/Oni-stable-private.git"
+  },
+  "bugs": {
+    "url": "https://github.com/TFlashgamer/Oni-stable-private/issues"
+  },
+  "homepage": "https://github.com/TFlashgamer/Oni-stable-private#readme"
 }
