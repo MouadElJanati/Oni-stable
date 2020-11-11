@@ -70,11 +70,6 @@ module.exports = {
       .setTitle(`Случилась ошибка при проигрывания трека из Soundcloud`)
       .setColor(fail)
       .setThumbnail("https://thumbs.gfycat.com/OldPalatableDugong-small.gif");
-    //* Ембед Видео не найдено
-    let ytnotfound = new Discord.MessageEmbed()
-      .setTitle(`Ой-ой! Мы не смогли найти видео с таким названием.`)
-      .setColor(fail)
-      .setThumbnail("https://thumbs.gfycat.com/OldPalatableDugong-small.gif");
     const { channel } = message.member.voice;
     const serverQueue = message.client.queue.get(message.guild.id);
     if (!channel) return message.reply(joinfirstembed).catch(console.error);
@@ -158,6 +153,15 @@ module.exports = {
         };
       } catch (error) {
         console.error(error);
+        let ytnotfound = new Discord.MessageEmbed()
+          .setTitle(
+            `Ой-ой! Произошла какая-то ошибка. Обратитесь к разработчику за помощью!`
+          )
+          .setDescription("Ошибка:\n ```" + error + "```")
+          .setColor(fail)
+          .setThumbnail(
+            "https://thumbs.gfycat.com/OldPalatableDugong-small.gif"
+          );
         return message.reply(ytnotfound).catch(console.error);
       }
     }
