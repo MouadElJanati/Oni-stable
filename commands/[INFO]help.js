@@ -11,6 +11,9 @@ module.exports = {
     const receivedEmbed = message.embeds[0];
     let embed = new Discord.MessageEmbed(receivedEmbed)
       .setTitle("Список модулей Oni🍂")
+      .setDescription(
+        "Вот все модули по которым Вы можете получить помощь прямо здесь:"
+      )
       .setURL("https://tflashgamer.github.io/onicommands.html")
       .setColor(success)
       .addField(
