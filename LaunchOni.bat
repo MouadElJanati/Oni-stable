@@ -1,6 +1,7 @@
 ECHO OFF
 CLS
 TITLE Oni
+set startTime=%time%
 :MENU
 ECHO     ██████████████████████████████████████      
 ECHO   ██▒▒██    ▒▒██  ██    ░░██▓▓██    ▒▒██▓▓██
@@ -26,7 +27,7 @@ ECHO ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 ECHO.
 ECHO 1 - Запустить Oni
 ECHO 2 - Утановить библиотеки [Нужно запустить когда впервые запускаете бота]
-ECHO 3 - Восстановить или обновить Oni [если что-то пошло не так]
+ECHO 3 - Обновить Oni
 ECHO 4 - Выйти
 ECHO.
 SET /P M=Введите 1, 2, 3, или 4 и нажмите ENTER:
@@ -43,11 +44,13 @@ cls
 ECHO Устанавливаем нужные библиотеки...  
 ECHO [i] Если здесь Вы получаете ошибку, убедитесь, что у Вас установлена стабильная версия node.js
 npm start
+TIMEOUT /T 5
 :UPDATE
 cls
-ECHO Пытаемся обновить/восстановить Oni...
+ECHO Пытаемся обновить Oni...
 ECHO [i] Если здесь Вы получаете ошибку, убедитесь, что у Вас установлена стабильная версия git
-git clone https://github.com/TFlashgamer/Oni-stable .
+git pull https://github.com/TFlashgamer/Oni-stable 
+TIMEOUT /T 5
 GOTO MENU
 :ERROR
 cls
@@ -59,5 +62,7 @@ GOTO MENU
 cls
 ECHO Закрываем Oni...
 ECHO Успешно завершено
+echo Бот начал работать: %startTime%
+echo Бот закончил работать: %time%
 TIMEOUT /T 5
 exit
