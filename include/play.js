@@ -57,11 +57,8 @@ module.exports = {
           module.exports.play(queue.songs[0], message);
         }
         let errorembeds = new Discord.MessageEmbed()
-          .setTitle(`Ошибка`)
-          .setDescription(
-            "Случилась не предвиденная ошибка.\nОписание ошибки:" +
-              `${error.message ? error.message : error}`
-          )
+          .setTitle(`Случилась непредвиденная ошибка.`)
+          .setDescription("Ошибка:\n ```" + error + "```")
           .setColor(fail)
           .setThumbnail(
             `https://thumbs.gfycat.com/OldPalatableDugong-small.gif`
